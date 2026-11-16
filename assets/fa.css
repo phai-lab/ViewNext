@@ -1,0 +1,18 @@
+@font-face{font-family:"FA Solid";src:url("fonts/fa-solid.woff2?v=40904b09") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:"FA Brands";src:url("fonts/fa-brands.woff2?v=232c3a1d") format("woff2");font-weight:400;font-display:block}
+.fa-solid,.fa-brands{display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto;-webkit-font-smoothing:antialiased}
+.fa-solid{font-family:"FA Solid";font-weight:900} .fa-brands{font-family:"FA Brands";font-weight:400}
+.fa-arrow-up-right-from-square:before{content:"\f08e"}
+.fa-chevron-left:before{content:"\f053"}
+.fa-chevron-right:before{content:"\f054"}
+.fa-chevron-down:before{content:"\f078"}
+.fa-face-smile:before{content:"\f118"}
+.fa-file-lines:before{content:"\f15c"}
+.fa-cube:before{content:"\f1b2"}
+.fa-photo-film:before{content:"\f87c"}
+.fa-wand-magic-sparkles:before{content:"\e2ca"}
+.fa-list-ol:before{content:"\f0cb"}
+.fa-xmark:before{content:"\f00d"}
+.fa-copy:before{content:"\f0c5"}
+.fa-check:before{content:"\f00c"}
+.fa-github:before{content:"\f09b"}

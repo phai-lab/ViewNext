@@ -1,0 +1,59 @@
+/* ViewNeXt project page: shared style (same tokens as the teaser page) */
+:root { --bg: #f5f1ea; --fg: #4b4640; --muted: #8a837a; --soft: rgba(96, 80, 60, .2); --tint: rgba(75, 70, 64, .06); --line: rgba(75, 70, 64, .14); --off: #e4ded4; --offfg: #a39b90; color-scheme: light; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 500; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+p { margin: 0; }
+.title { font-family: "EB Garamond", Georgia, serif; font-weight: 600; font-size: clamp(50px, 7.6vw, 88px); line-height: 1; letter-spacing: -.02em; }
+.tagline { font-size: clamp(16px, 1.9vw, 20px); color: var(--muted); font-weight: 500; }
+.h2 { font-weight: 700; font-size: clamp(24px, 2.8vw, 30px); line-height: 1.2; }   /* only the page title uses EB Garamond */
+.kicker { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.lead { font-size: 16px; color: var(--fg); max-width: 62ch; }
+.muted { color: var(--muted); }
+
+/* institutions, exactly as on the teaser page */
+.credits { display: flex; flex-wrap: wrap; align-items: center; gap: 10px clamp(16px, 2.6vw, 26px); }
+.org { display: flex; align-items: center; gap: 13px; font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; font-size: clamp(34px, 4.4vw, 46px); letter-spacing: .02em; line-height: 1; white-space: nowrap; }
+.org img { height: .7em; width: auto; display: block; margin-top: -.1em; }   /* logo = Bebas capital height, aligned to the capitals */
+.x { width: clamp(18px, 2.6vw, 26px); height: auto; display: block; }
+
+/* buttons: GitHub live, arXiv and Hugging Face greyed out until release */
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 600; letter-spacing: .01em; background: var(--fg); color: var(--bg); transition: background-color .15s ease; }
+.btn:hover { background: #35312c; }   /* just a touch darker, no movement */
+.btn i { font-size: 15px; }
+.btn.off { background: var(--off); color: var(--offfg); cursor: default; pointer-events: none; }
+.btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+/* media */
+.frame { filter: drop-shadow(0 16px 26px var(--soft)); }
+.video { position: relative; width: 100%; aspect-ratio: 1376 / 768; background: #000 center / cover no-repeat; clip-path: url(#smooth-corners); }
+.video::after { content: "\f04b"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; padding-left: 4px; font-size: 22px; color: var(--fg); background: rgba(245, 241, 234, .9); }
+.ph { position: relative; border-radius: 18px; background: var(--tint); display: grid; place-items: center; color: var(--muted); font-size: 14px; font-weight: 600; text-align: center; padding: 18px; }
+.ph i { display: block; font-size: 22px; margin-bottom: 8px; opacity: .8; }
+.shot { border-radius: 14px; background: #000 center / cover no-repeat; aspect-ratio: 16 / 9; box-shadow: 0 8px 18px var(--soft); }
+
+/* results table placeholder */
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tbl th { font-weight: 600; color: var(--muted); text-align: right; padding: 8px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; }
+.tbl td { text-align: right; padding: 8px 12px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; color: var(--muted); }
+.tbl tr.ours td { color: var(--fg); font-weight: 700; }
+.tbl tr.ours td:first-child::after { content: "best"; margin-left: 8px; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: var(--fg); color: var(--bg); vertical-align: 1px; }
+
+/* interactive sparse-view viewer placeholder */
+.viewer { display: grid; gap: 12px; }
+.viewer .stage { aspect-ratio: 16 / 9; border-radius: 18px; background: var(--tint); display: grid; place-items: center; color: var(--muted); font-weight: 600; font-size: 14px; text-align: center; }
+.viewer .stage i { display: block; font-size: 24px; margin-bottom: 8px; }
+.viewer .views { display: flex; gap: 8px; justify-content: center; }
+.viewer .views span { width: 54px; aspect-ratio: 4 / 3; border-radius: 8px; background: var(--off); }
+.viewer .views span.on { outline: 2px solid var(--fg); outline-offset: 2px; }
+.viewer input[type=range] { width: 100%; accent-color: var(--fg); }
+
+.footer { font-size: 13px; color: var(--muted); line-height: 1.7; text-align: center; max-width: 620px; margin: 0 auto; }
+
+@media (max-width: 760px) { .stack-sm { grid-template-columns: 1fr !important; } .hide-sm { display: none !important; } }
+[hidden] { display: none !important; }
+main > *, .wrap > *, .row > *, .hero > *, .two > *, .ed > *, .hdr > *, section, .tile { min-width: 0; }   /* let wide tables scroll inside their box on phones */
