@@ -10,8 +10,13 @@ const root = document.getElementById("mvdemo");
 const SCENES = JSON.parse(root.dataset.scenes);                 // [{key, label}]
 const canvas = root.querySelector("canvas"), photo = root.querySelector(".mv-photo img"), cap = root.querySelector(".mv-cap"), bar = root.querySelector(".mv-load i");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); renderer.setPixelRatio(Math.min(2, devicePixelRatio));
-const scene = new THREE.Scene(), cam3 = new THREE.PerspectiveCamera(45, 1, 0.01, 100), controls = new OrbitControls(cam3, canvas);
-controls.enableDamping = true; controls.dampingFactor = 0.08; controls.rotateSpeed = 0.7;
+const scene = new THREE.Scene(), cam3 = new THREE.PerspectiveCamera(45, 1, 0.01, 100);
+let controls = null;
+function makeControls() {                                       // OrbitControls reads cam3.up only when created, so rebuild it after each scene sets its up
+  if (controls) controls.dispose();
+  controls = new OrbitControls(cam3, canvas); controls.enableDamping = true; controls.dampingFactor = 0.08; controls.rotateSpeed = 0.7;
+}
+makeControls();
 const COL = { out: 0x9a8f83, inp: 0xe8820c, sel: 0x1f1b17, inpSel: 0xb4520a, hov: 0x2563c9 };
 let group = null, cams = [], sel = -1, hov = -1, cur = null, loadId = 0;
 const tip = root.querySelector(".mv-tip"), tipImg = tip.querySelector("img"), tipTxt = tip.querySelector("span");
@@ -60,7 +65,7 @@ async function load(key) {
   group.add(new THREE.Points(g, new THREE.PointsMaterial({ size: 0.011, vertexColors: true, sizeAttenuation: true })));
   const d = 0.13; cams = S.cams.map(c => Object.assign(frustum(c, S.fovy, d, c.role === "input" ? COL.inp : COL.out), { c }));
   cams.forEach(f => group.add(f.lines)); hov = -1; sel = -1; hideTip();
-  cam3.up.set(...S.up); controls.target.set(0, 0, 0);
+  cam3.up.set(...S.up); makeControls(); controls.target.set(0, 0, 0);
   const first = S.cams.findIndex(c => c.role === "input"), c0 = S.cams[first >= 0 ? first : 0];           // start behind and above the first input camera
   const back = new THREE.Vector3(c0.pos[0], c0.pos[1], c0.pos[2]).multiplyScalar(1.9).add(new THREE.Vector3(...S.up).multiplyScalar(0.9));
   cam3.position.copy(back); controls.update();

@@ -186,4 +186,4 @@ const ls = [...document.querySelectorAll(".nl a")], ss = ls.map(a => document.qu
 const dot = document.querySelector(".nl .dot");
 function spy() { let k = 0; ss.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .35) k = i; }); ls.forEach((a, i) => a.classList.toggle("on", i === k)); if (typeof navl !== "undefined") navl.textContent = ls[k].textContent; const ra = ls[k].getBoundingClientRect(), ru = dot.parentElement.getBoundingClientRect(); dot.style.top = (ra.top - ru.top + ra.height / 2 - 3) + "px"; }
 addEventListener("scroll", spy, { passive: true }); spy();
-</script><script type="module" src="assets/mvviewer.js?v=7bd62301"></script></body></html>
+</script><script type="module" src="assets/mvviewer.js?v=c3fa8cda"></script></body></html>
