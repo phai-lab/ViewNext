@@ -1,8 +1,8 @@
 # ViewNeXt: Diffusion-Based View Synthesis Revisited
 
-Jian Zhang<sup>1*</sup>, Bangya Liu<sup>2,3*</sup>, Nuo Chen<sup>1</sup>, Hao Wang<sup>1,4</sup>, Sisong Bei<sup>5</sup>, Xinyu Gong<sup>6</sup>, Gordon Wetzstein<sup>7</sup>, Yipeng Wang<sup>2</sup>, Zhiwen Fan<sup>1†</sup>
+[Jian Zhang](https://jzh15.github.io/)<sup>1*</sup>, [Bangya Liu](https://neutrinoliu.github.io/)<sup>2,3*</sup>, [Nuo Chen](https://nuochen1203.github.io/)<sup>1</sup>, [Hao Wang](https://haohww.github.io/)<sup>1,4</sup>, Sisong Bei<sup>5</sup>, [Xinyu Gong](https://gongxinyuu.github.io/)<sup>6</sup>, [Gordon Wetzstein](https://profiles.stanford.edu/gordon-wetzstein)<sup>7</sup>, [Yipeng Wang](https://www.yipeng.dev/)<sup>2</sup>, [Zhiwen Fan](https://zhiwenfan.github.io/)<sup>1†</sup>
 
-<sup>1</sup>PHAI Lab, TAMU · <sup>2</sup>2077AI · <sup>3</sup>UW-Madison · <sup>4</sup>Google DeepMind · <sup>5</sup>Amazon · <sup>6</sup>Adobe · <sup>7</sup>Stanford<br>
+<sup>1</sup>[PHAI Lab](https://phai-lab.github.io/), TAMU · <sup>2</sup>[2077AI](https://www.2077ai.com/) · <sup>3</sup>UW-Madison · <sup>4</sup>Google DeepMind · <sup>5</sup>Amazon · <sup>6</sup>Adobe · <sup>7</sup>Stanford<br>
 <sup>*</sup>Equal contribution · <sup>†</sup>Corresponding author
 
 [Project page](https://phai-lab.github.io/ViewNext/) · arXiv (coming soon) · Hugging Face (coming soon)
